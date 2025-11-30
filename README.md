@@ -19,7 +19,7 @@ Unlike traditional algorithms (ZIP, AES), this system converts data into **"Spik
 
 ## 📦 Usage
 
-### 1. Requirements
+1. Requirements
 pip install numpy pillow
 
 2. Workflow
@@ -39,7 +39,7 @@ Reconstruct the image from the spike data using the pre-generated key.
 python 03_decompress.py
 Output: output_data/restored_image.png
 
-📅 Roadmap
+## 📅 Roadmap
 
 v0.1: Proof of Concept (Single image sparse coding)
 
@@ -49,7 +49,6 @@ v1.0: Auto-optimization of neuron count based on data size
 
 v2.0: Evolutionary algorithm (GA) to search for the most efficient SNN structure
 
-👤 Author
+## 👤 Author
 hafufu-stack
 note: https://note.com/cell_activation/m/m5bf070b82882
-GitHub: hafufu-stack

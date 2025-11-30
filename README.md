@@ -19,22 +19,22 @@ Unlike traditional algorithms (ZIP, AES), this system converts data into **"Spik
 
 ## 📦 Usage
 
-1. Requirements
-pip install numpy pillow
+### 1. Requirements
+- `pip install numpy pillow`
 
-2. Workflow
-Step 1: Generate the Brain (Key)
+### 2. Workflow
+1. Generate the Brain (Key)
 Create a random neural network structure. This file (snn_key.pkl) is required for both encryption and decryption.
 python 01_generate_snn.py
 (Tested successfully with a 32x32 black-and-white image in v0.1)
 
-Step 2: Compress (Encrypt)
+2. Compress (Encrypt)
 Place your target image in the input_data/ directory.
 Run the compression script to generate spike data.
 python 02_compress.py
 Output: output_data/compressed.dat
 
-Step 3: Decompress (Decrypt)
+3. Decompress (Decrypt)
 Reconstruct the image from the spike data using the pre-generated key.
 python 03_decompress.py
 Output: output_data/restored_image.png
@@ -50,5 +50,4 @@ v1.0: Auto-optimization of neuron count based on data size
 v2.0: Evolutionary algorithm (GA) to search for the most efficient SNN structure
 
 ## 👤 Author
-hafufu-stack
-note: https://note.com/cell_activation/m/m5bf070b82882
+[note](https://note.com/cell_activation/m/m5bf070b82882)

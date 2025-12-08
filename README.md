@@ -1,4 +1,4 @@
-# Hippocampal SNN Crypt (v0.1 PoC)
+# Hippocampal SNN Crypt
 **Bio-inspired Data Compression & Encryption based on Spiking Neural Networks**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)

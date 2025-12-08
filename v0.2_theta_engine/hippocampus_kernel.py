@@ -54,7 +54,7 @@ def dg_process_kernel(
         # modulation = 1.0 + phase_lock_strength * cos(theta_phase + neuron_preferred_phase)
         # For simplicity in v0.2, assume all neurons prefer peak theta (0).
 
-        modulation = 1.0 + 0.5 * math.cos(theta_phase)
+        modulation = 1.0 + phase_lock_strength * math.cos(theta_phase)
 
         # Total Current I calculation
         # MD acts as a modulation signal (Gating), LD acts as the driving signal.

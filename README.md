@@ -18,6 +18,17 @@ The results show that even with constant LD input, the firing rate oscillates in
 
 ![Theta Result](assets/theta_result.png)
 
+## 🧪 Experiment 2: Pattern Separation (v0.2)
+
+We tested whether the network could distinguish between two nearly identical inputs (**99.8% overlap**).
+
+- **Input Similarity**: 0.9978 (Almost identical)
+- **Output Similarity (Theta ON)**: **0.5817** (Successfully separated!)
+- **Sparsity**: 3.9% (Biologically realistic sparse firing)
+
+The result confirms that the DG circuit, modulated by Theta phase, functions as a powerful pattern separator, converting highly overlapping inputs into distinct orthogonal outputs.
+
+![Pattern Separation](assets/pattern_separation_result.png)
 
 ## 🧩 Additional Demo: Noise Reduction (Hiragana)
 

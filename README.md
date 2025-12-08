@@ -4,6 +4,21 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
 
+# 🧠 Hippocampal-SNN-Crypt
+
+Simulating the Dentate Gyrus (DG) neuronal circuit to verify "Pattern Separation" and "Phase Precession" mechanisms.
+
+## 🧪 Experiment 1: Theta Phase Modulation (v0.2)
+We verified the hypothesis that **Medial Dendrite (MD) inputs modulate the information flow of Lateral Dendrite (LD) inputs via Theta Phase.**
+
+- **Green Line**: Theta Rhythm (MD Input Modulation)
+- **Blue Line**: Population Firing Rate (Output)
+
+The results show that even with constant LD input, the firing rate oscillates in perfect synchronization with the Theta phase, demonstrating a "Gating Mechanism".
+
+![Theta Result](assets/theta_result.png)
+
+
 ## 🧠 Overview
 This project is a Proof of Concept (PoC) for a next-generation data compression and encryption algorithm inspired by the information processing mechanism of the **Hippocampal Dentate Gyrus** (Pattern Separation & Sparse Coding).
 

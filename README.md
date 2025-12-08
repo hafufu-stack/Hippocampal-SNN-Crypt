@@ -1,4 +1,4 @@
-# Hippocampal SNN Crypt (v0.1 PoC)
+# Hippocampal SNN Crypt
 **Bio-inspired Data Compression & Encryption based on Spiking Neural Networks**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -18,6 +18,15 @@ The results show that even with constant LD input, the firing rate oscillates in
 
 ![Theta Result](assets/theta_result.png)
 
+
+## 🧩 Additional Demo: Noise Reduction (Hiragana)
+
+Demonstration of the SNN's ability to filter out heavy Gaussian noise and reconstruct the original structural pattern of the Japanese character **"あ" (A)**.
+
+| Noisy Input | Reconstructed Output |
+| :---: | :---: |
+| ![Input](assets/demo_hiragana_input.png) | ![Output](assets/demo_hiragana_output.png) |
+| *Heavily corrupted input* | *Clean reconstruction via SNN* |
 
 ## 🧠 Overview
 This project is a Proof of Concept (PoC) for a next-generation data compression and encryption algorithm inspired by the information processing mechanism of the **Hippocampal Dentate Gyrus** (Pattern Separation & Sparse Coding).

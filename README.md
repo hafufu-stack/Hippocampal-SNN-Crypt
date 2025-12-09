@@ -30,6 +30,19 @@ The result confirms that the DG circuit, modulated by Theta phase, functions as 
 
 ![Pattern Separation](assets/pattern_separation_result.png)
 
+## 🧪 Experiment 3: STDP Learning (v0.3)
+
+We implemented **Spike-Timing-Dependent Plasticity (STDP)** to enable the network to learn specific input patterns.
+
+- **A (Pre)**: Response before training.
+- **A (Post)**: Response after training (Significant increase!).
+- **B (Post)**: Response to a novel pattern (Generalization effect observed).
+
+The results demonstrate that the network successfully strengthened synaptic weights for Pattern A, increasing the response by **>300%**, proving the formation of memory.
+
+![STDP Learning](assets/stdp_memory_result.png)
+
+
 ## 🧩 Additional Demo: Noise Reduction (Hiragana)
 
 Demonstration of the SNN's ability to filter out heavy Gaussian noise and reconstruct the original structural pattern of the Japanese character **"あ" (A)**.

@@ -65,6 +65,18 @@ Since the background pixels had high intensity, the corresponding synapses were 
 
 ![Visual Memory](assets/visual_memory_result.png)
 
+## 🧪 Experiment 6: Pattern Completion (v0.6)
+
+Demonstration of **Pattern Completion (Memory Recall)**.
+The network, having memorized the character "あ", was presented with a heavily corrupted noisy version.
+
+- **Center**: Noisy Input (Hard to read).
+- **Right**: Reconstructed Output (Perfectly recalled from memory).
+
+The noise reduction rate was **100.0%**. The network successfully filtered out the noise and retrieved the clean memory trace stored in the synapses.
+
+![Pattern Completion](assets/pattern_completion_result.png)
+
 ## 🧩 Additional Demo: Noise Reduction (Hiragana)
 
 Demonstration of the SNN's ability to filter out heavy Gaussian noise and reconstruct the original structural pattern of the Japanese character **"あ" (A)**.

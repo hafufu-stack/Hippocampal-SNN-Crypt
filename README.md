@@ -77,6 +77,17 @@ The noise reduction rate was **100.0%**. The network successfully filtered out t
 
 ![Pattern Completion](assets/pattern_completion_result.png)
 
+## 🧪 Experiment 7: CA3 Reverberation (v0.7)
+
+We implemented the **CA3 Recurrent Network**, where neurons are sparsely connected to each other (Recurrent Connections).
+
+- **Green Line**: External Input (Stops at 100ms).
+- **Blue Dots**: Neuron Spikes.
+
+Even after the external input is removed (Red dashed line), the network activity persists and spreads to other neurons. This demonstrates **Reverberation (Attractor Dynamics)**, which is the mechanism behind Working Memory.
+
+![Reverberation](assets/reverberation_result.png)
+
 ## 🧩 Additional Demo: Noise Reduction (Hiragana)
 
 Demonstration of the SNN's ability to filter out heavy Gaussian noise and reconstruct the original structural pattern of the Japanese character **"あ" (A)**.

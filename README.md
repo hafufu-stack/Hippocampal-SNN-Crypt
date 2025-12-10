@@ -54,6 +54,17 @@ This result confirms that the SNN can compress temporal sequences (past-present-
 
 ![Phase Precession](assets/phase_precession_result.png)
 
+## 🧪 Experiment 5: Visual Memory (v0.5)
+
+We fed a real image (Hiragana "あ") into the network to visualize the memory engram.
+
+- **Left**: Input Image (Black text on White background).
+- **Right**: Synaptic Weights after training.
+
+Since the background pixels had high intensity, the corresponding synapses were potentiated via STDP (shown in **White**). The character pixels remained at initial levels (shown in **Red**), effectively carving the memory of the character into the neural circuit.
+
+![Visual Memory](assets/visual_memory_result.png)
+
 ## 🧩 Additional Demo: Noise Reduction (Hiragana)
 
 Demonstration of the SNN's ability to filter out heavy Gaussian noise and reconstruct the original structural pattern of the Japanese character **"あ" (A)**.

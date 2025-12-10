@@ -43,6 +43,17 @@ The results demonstrate that the network successfully strengthened synaptic weig
 ![STDP Learning](assets/stdp_memory_result.png)
 
 
+## 🧪 Experiment 4: Phase Precession (v0.4)
+
+We simulated a "Virtual Rat" moving through a place field to reproduce the **Theta Phase Precession** phenomenon.
+
+- **Hypothesis**: Stronger inputs cause neurons to fire earlier in the Theta cycle.
+- **Result**: The spike timing shifts from the late phase (top-left) to the early phase (bottom-right) as the rat traverses the field.
+
+This result confirms that the SNN can compress temporal sequences (past-present-future) into a single Theta cycle, a key mechanism for episodic memory.
+
+![Phase Precession](assets/phase_precession_result.png)
+
 ## 🧩 Additional Demo: Noise Reduction (Hiragana)
 
 Demonstration of the SNN's ability to filter out heavy Gaussian noise and reconstruct the original structural pattern of the Japanese character **"あ" (A)**.

@@ -186,12 +186,26 @@ Reconstruct the image from the spike data using the pre-generated key.
 python 03_decompress.py  
 Output: output_data/restored_image.png
 
-## 📅 Roadmap
+## 📅 Project Roadmap & History
 
-- [x] v0.1: Proof of Concept (Single image sparse coding)
-- [ ] v0.5: Support for arbitrary file types and folder batch processing
-- [ ] v1.0: Auto-optimization of neuron count based on data size
-- [ ] v2.0: Evolutionary algorithm (GA) to search for the most efficient SNN structure
+This project has evolved from a simple SNN test into a full-scale Hippocampal simulation.
+
+- [x] **v0.1**: Theta Phase Modulation Engine (Gating Mechanism)
+- [x] **v0.2**: Pattern Separation in Dentate Gyrus (DG)
+- [x] **v0.3**: Memory Formation via STDP Learning
+- [x] **v0.4**: Phase Precession (Temporal Compression)
+- [x] **v0.5**: Visual Memory Encoding (Engram Visualization)
+- [x] **v0.6**: Pattern Completion (Noise Reduction 100%)
+- [x] **v0.7**: CA3 Recurrent Network (Reverberation)
+- [x] **v0.8**: Associative Memory (Recall from partial cues)
+- [x] **v0.9**: DG-CA3 Signal Transmission Test
+- [x] **v1.0**: **Full Memory Circuit (DG -> CA3 Attractor)**
+- [x] **v1.1**: **Visual Working Memory (The Mind's Eye)**
+- [ ] **v1.2**: CA1 Integration (Decoder & Comparator)
+- [ ] **v2.0**: Closed-loop Hippocampal System (EC -> DG -> CA3 -> CA1 -> EC)
 
 ## 👤 Author
-[note](https://note.com/cell_activation/m/m5bf070b82882)
+
+**Hafufu**
+*   **note**: [https://note.com/cell_activation](https://note.com/cell_activation) (Research Log & Thoughts)
+*   **Zenn**: [https://zenn.dev/cell_activation](https://zenn.dev/cell_activation) (Technical Articles & Implementation Details)

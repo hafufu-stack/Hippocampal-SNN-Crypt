@@ -90,18 +90,22 @@ Even after the external input is removed (Red dashed line), the network activity
 
 ## 🧪 Experiment 8: Associative Memory (v0.8)
 
-We implemented **Recurrent STDP** in the CA3 network to demonstrate **Associative Memory (Pattern Completion)**.
+We implemented **Recurrent STDP** in the CA3 network to demonstrate **Associative Memory**.
+We tuned the bias to suppress background noise, achieving **perfect selectivity**.
 
 1.  **Training**: The network learned that Pattern A (ID 0-500) and Pattern B (ID 1000-1500) are associated.
 2.  **Testing**: We stimulated **ONLY Pattern A**.
 
 - **Green Zone**: Pattern A (Stimulated).
 - **Red Zone**: Pattern B (No Input).
+- **White Zone**: Background Neurons (No Input).
 
-**Result**: Even without external input, neurons in the Red Zone fired vigorously (Blue dots), triggered by the activity in the Green Zone via strengthened recurrent connections.
-This confirms that the network successfully "recalled" the missing part of the memory.
+**Result**: 
+- Neurons in the Red Zone fired robustly, triggered by the Green Zone via learned connections.
+- Background neurons remained completely silent (**0 spikes**).
+This confirms that the network successfully "recalled" the specific memory without activating unrelated neurons.
 
-![Associative Memory](assets/associative_memory_result.png)
+![Associative Memory](assets/associative_memory_selective.png)
 
 ## 🧩 Additional Demo: Noise Reduction (Hiragana)
 

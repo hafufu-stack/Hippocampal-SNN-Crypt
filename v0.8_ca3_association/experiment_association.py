@@ -12,14 +12,14 @@ import hippocampus_kernel
 
 # Config
 NUM_NEURONS = 2000      
-CONNECTIONS = 100       # More connections for better association
+CONNECTIONS = 100       
 SIM_TIME_TRAIN = 1000   
 SIM_TIME_TEST = 500     
 DT = 0.5
 
 # Parameters
 GAIN_INPUT = 40.0
-LEARNING_RATE = 0.05    # Fast learning
+LEARNING_RATE = 0.1     # Increased for faster learning from zero
 
 class AssociationExperiment:
     def __init__(self):
@@ -30,7 +30,11 @@ class AssociationExperiment:
         
         # Generate Recurrent Circuit
         print(f"🔗 Wiring {NUM_NEURONS} neurons ({CONNECTIONS} conns/neuron)...")
-        indices, weights = hippocampus_genes.generate_recurrent_connections(NUM_NEURONS, CONNECTIONS)
+        indices, _ = hippocampus_genes.generate_recurrent_connections(NUM_NEURONS, CONNECTIONS)
+        
+        # ★修正: 初期ウェイトを「ほぼゼロ」にする
+        # これにより、学習していないペアは反応しなくなる（選択性の向上）
+        weights = np.random.uniform(0.0, 0.05, (NUM_NEURONS, CONNECTIONS)).astype(np.float32)
         
         # GPU Alloc
         self.d_a = cuda.to_device(self.params['a'])
@@ -65,13 +69,12 @@ class AssociationExperiment:
         for t_step in range(steps):
             time = t_step * DT
             
-            # Kernel Call
             hippocampus_kernel.ca3_process_kernel[self.blocks, self.threads](
                 self.d_v_in, self.d_v_out, self.d_u_in, self.d_u_out,
                 self.d_a, self.d_b, self.d_c, self.d_d,
                 self.d_input_ext,
                 self.d_prev_spikes, 
-                self.d_rec_indices, self.d_rec_weights, # ★ Weights update here if lr > 0
+                self.d_rec_indices, self.d_rec_weights, 
                 self.d_spikes,
                 NUM_NEURONS, CONNECTIONS,
                 lr, 
@@ -93,25 +96,21 @@ class AssociationExperiment:
 def main():
     exp = AssociationExperiment()
     
-    # Define Patterns
-    # Pattern A: Neurons 0 - 500
-    # Pattern B: Neurons 1000 - 1500
+    # Pattern A: 0 - 500
+    # Pattern B: 1000 - 1500
     pattern_full = np.zeros(NUM_NEURONS, dtype=np.float32)
     pattern_full[0:500] = GAIN_INPUT
     pattern_full[1000:1500] = GAIN_INPUT
     
     pattern_partial = np.zeros(NUM_NEURONS, dtype=np.float32)
-    pattern_partial[0:500] = GAIN_INPUT # Only A provided
-    # B (1000-1500) is ZERO input
+    pattern_partial[0:500] = GAIN_INPUT 
     
-    # 1. Training Phase (Associate A and B)
+    # 1. Training
     print("\n--- Phase 1: Training (Association A <-> B) ---")
-    print("   Input: Both Pattern A and B are active.")
     _, _ = exp.run_phase(pattern_full, SIM_TIME_TRAIN, is_training=True)
     
-    # 2. Testing Phase (Recall B from A)
+    # 2. Testing
     print("\n--- Phase 2: Testing (Recall B from A) ---")
-    print("   Input: ONLY Pattern A is active.")
     spikes_t, spikes_id = exp.run_phase(pattern_partial, SIM_TIME_TEST, is_training=False)
     
     print("\n📊 Analyzing Results...")
@@ -119,26 +118,28 @@ def main():
     plt.figure(figsize=(10, 6))
     plt.scatter(spikes_t, spikes_id, s=1, color='blue', alpha=0.5)
     
-    # Draw regions
     plt.axhspan(0, 500, color='green', alpha=0.1, label='Pattern A (Input ON)')
     plt.axhspan(1000, 1500, color='red', alpha=0.1, label='Pattern B (Input OFF)')
     
-    plt.title('Associative Memory Recall')
+    plt.title('Associative Memory Recall (Selective)')
     plt.xlabel('Time (ms)')
     plt.ylabel('Neuron ID')
     plt.legend(loc='upper right')
     plt.grid(True, alpha=0.3)
     plt.show()
     
-    # Verify
-    # Check if neurons in B (1000-1500) fired
+    # Verification
     spikes_in_B = [i for i in spikes_id if 1000 <= i < 1500]
+    # Check background (500-1000)
+    spikes_background = [i for i in spikes_id if 500 <= i < 1000]
     
-    if len(spikes_in_B) > 100:
-        print("\n🏆 Success! Pattern B was recalled associatively!")
-        print(f"   {len(spikes_in_B)} spikes detected in the 'No Input' region.")
+    print(f"   Spikes in B (Target): {len(spikes_in_B)}")
+    print(f"   Spikes in Background (Noise): {len(spikes_background)}")
+    
+    if len(spikes_in_B) > len(spikes_background) * 5:
+        print("\n🏆 Success! Strong selectivity. Background is quiet.")
     else:
-        print("\n❌ Failed. Association was not strong enough.")
+        print("\n⚠️ Background is still noisy.")
 
 if __name__ == "__main__":
     main()

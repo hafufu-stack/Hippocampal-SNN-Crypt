@@ -107,6 +107,28 @@ This confirms that the network successfully "recalled" the specific memory witho
 
 ![Associative Memory](assets/associative_memory_selective.png)
 
+## 🧪 Experiment 9: Signal Transmission (v0.9)
+
+Before building the full memory loop, we verified the signal transmission from **DG to CA3** via **Mossy Fibers**.
+
+- **Top (Blue)**: DG activity driven by external input (0-100ms).
+- **Bottom (Green)**: CA3 activity driven **solely by DG inputs**.
+
+The result shows that the sparse but strong "Detonator" synapses (Mossy Fibers) successfully propagate the information from DG to CA3. The slight tail in CA3 activity (100ms-150ms) is due to the bursting properties of Pyramidal cells, not recurrent memory (which is added in v1.0).
+
+![Signal Transmission](assets/dg_ca3_transmission.png)
+
+## 🏆 Experiment 10: Full Hippocampal Circuit (v1.0)
+
+We integrated **DG (Input Separation)** and **CA3 (Recurrent Memory)** into a unified circuit.
+
+- **DG (Blue)**: Driven by external input, stops firing immediately after input removal (200ms).
+- **CA3 (Green)**: Driven by DG's "Detonator" synapses. Even after DG stops, **CA3 continues to fire (Reverberation)** due to the recurrent loops formed via STDP.
+
+This demonstrates the formation of a **Stable Attractor State**, proving that the network can maintain memory autonomously.
+
+![Full Circuit](assets/full_circuit_result.png)
+
 ## 🧩 Additional Demo: Noise Reduction (Hiragana)
 
 Demonstration of the SNN's ability to filter out heavy Gaussian noise and reconstruct the original structural pattern of the Japanese character **"あ" (A)**.

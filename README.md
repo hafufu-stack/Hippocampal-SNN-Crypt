@@ -88,6 +88,21 @@ Even after the external input is removed (Red dashed line), the network activity
 
 ![Reverberation](assets/reverberation_result.png)
 
+## 🧪 Experiment 8: Associative Memory (v0.8)
+
+We implemented **Recurrent STDP** in the CA3 network to demonstrate **Associative Memory (Pattern Completion)**.
+
+1.  **Training**: The network learned that Pattern A (ID 0-500) and Pattern B (ID 1000-1500) are associated.
+2.  **Testing**: We stimulated **ONLY Pattern A**.
+
+- **Green Zone**: Pattern A (Stimulated).
+- **Red Zone**: Pattern B (No Input).
+
+**Result**: Even without external input, neurons in the Red Zone fired vigorously (Blue dots), triggered by the activity in the Green Zone via strengthened recurrent connections.
+This confirms that the network successfully "recalled" the missing part of the memory.
+
+![Associative Memory](assets/associative_memory_result.png)
+
 ## 🧩 Additional Demo: Noise Reduction (Hiragana)
 
 Demonstration of the SNN's ability to filter out heavy Gaussian noise and reconstruct the original structural pattern of the Japanese character **"あ" (A)**.

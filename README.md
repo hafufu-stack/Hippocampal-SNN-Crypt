@@ -129,6 +129,19 @@ This demonstrates the formation of a **Stable Attractor State**, proving that th
 
 ![Full Circuit](assets/full_circuit_result.png)
 
+## 🧪 Experiment 11: Visual Circuit & The Mind's Eye (v1.1)
+
+We combined the Visual Input (v0.5) and the Full Memory Circuit (v1.0).
+The network was shown an image of "あ", and then the input was removed.
+
+- **Left**: Visual Input (0-200ms).
+- **Right**: **Reconstructed Memory (300ms+)**.
+
+The image on the right is decoded solely from the **reverberating activity of CA3 neurons** after the input was turned off.
+This visualizes the "Mind's Eye" — the network is actively holding the visual information in its working memory.
+
+![Visual Reconstruction](assets/visual_memory_reconstruction.png)
+
 ## 🧩 Additional Demo: Noise Reduction (Hiragana)
 
 Demonstration of the SNN's ability to filter out heavy Gaussian noise and reconstruct the original structural pattern of the Japanese character **"あ" (A)**.

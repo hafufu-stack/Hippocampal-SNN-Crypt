@@ -35,6 +35,15 @@ It runs biological neuronal models (Izhikevich) in real-time on consumer GPUs (e
 
 This repository is organized by "Versions," each representing a specific stage of hippocampal implementation.
 
+### v2.1: Novelty Detection & One-Shot Learning
+**Location:** `v2.1_novelty_detection/`
+Simulates the release of **Dopamine** when CA1 detects a mismatch (Novelty), triggering rapid one-shot learning.
+```bash
+cd v2.1_novelty_detection
+python experiment_novelty.py
+```
+*   **Goal**: Demonstrate that "Surprise" (mismatch) boosts the learning rate, allowing the network to instantly memorize a new pattern.
+
 ### v2.0: Comparator (Reality vs Memory)
 **Location:** `v2.0_comparator/`
 Simulates **CA1** acting as a comparator between sensory input (EC) and memory prediction (CA3).
@@ -72,6 +81,11 @@ python experiment_phase_precession.py
 
 ## 📊 Results Gallery
 
+### v2.1: Novelty-Induced One-Shot Learning
+When a novel pattern (Red Zone) is presented, CA1 activity drops. This mismatch triggers a **Dopamine Surge (Orange Line)**, boosting the learning rate.
+As a result, the network instantly learns the pattern, showing high recognition activity in the subsequent phase (Blue Zone).
+![Novelty Learning](assets/novelty_learning_result.png)
+
 ### v2.0: Comparator Function
 CA1 acts as an AND-gate for Reality (EC) and Memory (CA3).
 ![Comparator](assets/comparator_result.png)
@@ -105,7 +119,7 @@ Temporal compression of sequence information into Theta cycles.
 - [x] **v1.1**: Visual Working Memory (The Mind's Eye)
 - [x] **v1.2**: CA1 Integration (Memory Retrieval)
 - [x] **v2.0**: CA1 Comparator (Reality vs Memory Check)
-- [ ] **v2.1**: **Novelty Detection (Mismatch triggers new learning)**
+- [x] **v2.1**: **Novelty Detection (Mismatch triggers new learning)**
 - [ ] **v3.0**: Closed-loop System (CA1 -> EC Feedback)
 
 ## 👤 Author

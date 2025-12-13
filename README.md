@@ -154,6 +154,17 @@ Crucially, **CA1 continues to fire after 200ms**, driven solely by the internal 
 
 ![Trisynaptic Circuit](assets/trisynaptic_circuit_result.png)
 
+## 🧪 Experiment 13: Comparator Function (v2.0)
+
+We implemented the **Comparator** function in CA1, which compares "Reality" (Direct input from EC) with "Memory/Prediction" (Indirect input via DG-CA3).
+
+- **Red Bar (Match)**: Both Reality and Memory pathways are active. CA1 fires strongly (**Coincidence Detection**).
+- **Gray Bar (Mismatch)**: Only Reality is active (Memory is silent/mismatch). CA1 firing is suppressed below threshold.
+
+**Result**: The network showed an **8:1 Signal-to-Noise Ratio**.
+This confirms that CA1 acts as an "AND gate" for information, amplifying signals only when the external world matches the internal memory prediction.
+
+![Comparator](assets/comparator_result.png)
 
 ## 🧩 Additional Demo: Noise Reduction (Hiragana)
 
@@ -212,10 +223,12 @@ This project has evolved from a simple SNN test into a full-scale Hippocampal si
 - [x] **v0.7**: CA3 Recurrent Network (Reverberation)
 - [x] **v0.8**: Associative Memory (Recall from partial cues)
 - [x] **v0.9**: DG-CA3 Signal Transmission Test
-- [x] **v1.0**: **Full Memory Circuit (DG -> CA3 Attractor)**
-- [x] **v1.1**: **Visual Working Memory (The Mind's Eye)**
-- [x] **v1.2**: CA1 Integration (Decoder & Comparator)
-- [ ] **v2.0**: Closed-loop Hippocampal System (EC -> DG -> CA3 -> CA1 -> EC)
+- [x] **v1.0**: Full Memory Circuit (DG -> CA3 Attractor)
+- [x] **v1.1**: Visual Working Memory (The Mind's Eye)
+- [x] **v1.2**: CA1 Integration (Memory Retrieval)
+- [x] **v2.0**: CA1 Comparator (Reality vs Memory Check)
+- [ ] **v2.1**: Novelty Detection (Mismatch triggers new learning)
+- [ ] **v3.0**: Closed-loop System (CA1 -> EC Feedback)
 
 ## 👤 Author
 

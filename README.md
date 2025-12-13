@@ -16,7 +16,7 @@ It runs biological neuronal models (Izhikevich) in real-time on consumer GPUs (e
     *   **Izhikevich Neuron Models**: Reproducing spiking behaviors of Granule Cells and Pyramidal Cells.
     *   **STDP Learning**: Synaptic weights evolve based on spike timing (Hebbian learning).
     *   **Theta Rhythm**: Simulating 8Hz brain waves to modulate information flow.
-*   **Full Circuit Integration**: Connecting **DG** (Pattern Separation), **CA3** (Recurrent Memory), and **CA1** (Comparator).
+*   **Full Circuit Integration**: Connecting **DG** (Pattern Separation), **CA3** (Recurrent Memory), and **CA1** (Comparator) with Feedback loops.
 
 ---
 
@@ -35,9 +35,18 @@ It runs biological neuronal models (Izhikevich) in real-time on consumer GPUs (e
 
 This repository is organized by "Versions," each representing a specific stage of hippocampal implementation.
 
+### v3.0: Closed-loop Sequence Replay
+**Location:** `v3.0_closed_loop/`
+Closes the loop by connecting **CA1 back to EC**.
+```bash
+cd v3.0_closed_loop
+python experiment_closed_loop.py
+```
+*   **Goal**: Demonstrate autonomous "Sequence Replay" (A->B->C) triggered by a single cue, simulating the brain's internal thought process.
+
 ### v2.1: Novelty Detection & One-Shot Learning
 **Location:** `v2.1_novelty_detection/`
-Simulates the release of **Dopamine** when CA1 detects a mismatch (Novelty), triggering rapid one-shot learning.
+Simulates the release of **Dopamine** when CA1 detects a mismatch (Novelty).
 ```bash
 cd v2.1_novelty_detection
 python experiment_novelty.py
@@ -81,9 +90,12 @@ python experiment_phase_precession.py
 
 ## 📊 Results Gallery
 
+### v3.0: Closed-loop Sequence Replay
+The network spontaneously recalls associated patterns (C) after the cue (A), demonstrating **autonomous thought generation**.
+![Sequence Replay](assets/closed_loop_replay.png)
+
 ### v2.1: Novelty-Induced One-Shot Learning
-When a novel pattern (Red Zone) is presented, CA1 activity drops. This mismatch triggers a **Dopamine Surge (Orange Line)**, boosting the learning rate.
-As a result, the network instantly learns the pattern, showing high recognition activity in the subsequent phase (Blue Zone).
+Mismatch triggers a **Dopamine Surge**, allowing instant learning of new patterns.
 ![Novelty Learning](assets/novelty_learning_result.png)
 
 ### v2.0: Comparator Function
@@ -119,8 +131,8 @@ Temporal compression of sequence information into Theta cycles.
 - [x] **v1.1**: Visual Working Memory (The Mind's Eye)
 - [x] **v1.2**: CA1 Integration (Memory Retrieval)
 - [x] **v2.0**: CA1 Comparator (Reality vs Memory Check)
-- [x] **v2.1**: **Novelty Detection (Mismatch triggers new learning)**
-- [ ] **v3.0**: Closed-loop System (CA1 -> EC Feedback)
+- [x] **v2.1**: Novelty Detection (Mismatch triggers new learning)
+- [x] **v3.0**: **Closed-loop System (CA1 -> EC Feedback)**
 
 ## 👤 Author
 

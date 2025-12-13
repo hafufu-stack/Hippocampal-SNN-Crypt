@@ -142,6 +142,19 @@ This visualizes the "Mind's Eye" — the network is actively holding the visual 
 
 ![Visual Reconstruction](assets/visual_memory_reconstruction.png)
 
+## 🏆 Experiment 12: Full Trisynaptic Circuit (v1.2)
+
+We successfully integrated the complete hippocampal pathway: **DG -> CA3 -> CA1**.
+
+- **Top (Blue)**: DG (Sensory Input). Stops at 200ms.
+- **Middle (Green)**: CA3 (Memory Storage). Maintains activity via reverberation after 200ms.
+- **Bottom (Red)**: **CA1 (Output/Readout)**.
+
+Crucially, **CA1 continues to fire after 200ms**, driven solely by the internal memory of CA3. This confirms that the circuit can perform **Memory Retrieval**, reading out stored information even in the absence of external input.
+
+![Trisynaptic Circuit](assets/trisynaptic_circuit_result.png)
+
+
 ## 🧩 Additional Demo: Noise Reduction (Hiragana)
 
 Demonstration of the SNN's ability to filter out heavy Gaussian noise and reconstruct the original structural pattern of the Japanese character **"あ" (A)**.
@@ -201,7 +214,7 @@ This project has evolved from a simple SNN test into a full-scale Hippocampal si
 - [x] **v0.9**: DG-CA3 Signal Transmission Test
 - [x] **v1.0**: **Full Memory Circuit (DG -> CA3 Attractor)**
 - [x] **v1.1**: **Visual Working Memory (The Mind's Eye)**
-- [ ] **v1.2**: CA1 Integration (Decoder & Comparator)
+- [x] **v1.2**: CA1 Integration (Decoder & Comparator)
 - [ ] **v2.0**: Closed-loop Hippocampal System (EC -> DG -> CA3 -> CA1 -> EC)
 
 ## 👤 Author
